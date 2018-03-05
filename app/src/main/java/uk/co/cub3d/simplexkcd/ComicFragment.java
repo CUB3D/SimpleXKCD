@@ -49,9 +49,14 @@ public class ComicFragment extends Fragment {
                         getActivity().runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                ((ImageView)b.findViewById(R.id.imageView)).setImageBitmap(data);
-                                ((TextView)b.findViewById(R.id.textViewTitle)).setText(comic.title);
-                                ((TextView)b.findViewById(R.id.textViewAltText)).setText(comic.altText);
+                                ImageView img = b.findViewById(R.id.imageView);
+                                img.setImageBitmap(data);
+
+                                TextView title = b.findViewById(R.id.textViewTitle);
+                                title.setText(comic.title);
+
+                                TextView alt = b.findViewById(R.id.textViewAltText);
+                                alt.setText(comic.altText);
                             }
                         });
                     }

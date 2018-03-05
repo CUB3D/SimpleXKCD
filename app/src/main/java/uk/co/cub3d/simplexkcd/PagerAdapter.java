@@ -21,8 +21,8 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
         this.availableComics = availableComics;
     }
 
-    public Fragment getComicFragement(int id) {
-        Fragment f =  new ComicFragment();
+    public ComicFragment getComicFragement(int id) {
+        ComicFragment f =  new ComicFragment();
         Bundle b = new Bundle();
         b.putInt("comicID", id);
         f.setArguments(b);
