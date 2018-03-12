@@ -14,6 +14,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import java.util.Random;
+
 public class Main2Activity extends AppCompatActivity implements ComicFragment.OnFragmentInteractionListener {
 
     public ViewPager pager;
@@ -81,8 +83,17 @@ public class Main2Activity extends AppCompatActivity implements ComicFragment.On
             case R.id.share:
                 Toast.makeText(getApplicationContext(), "Share is not implemented yet", Toast.LENGTH_LONG).show();
                 break;
+            case R.id.random:
+                this.pager.setCurrentItem(this.randomCommicID());
+                break;
+
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public int randomCommicID() {
+        int maxValue = this.adapter.getCount();
+        return new Random().nextInt(maxValue);
     }
 
     public void downloadComic(int comicID) {
